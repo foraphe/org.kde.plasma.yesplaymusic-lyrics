@@ -36,6 +36,11 @@
       <default>disable</default>
     </entry>
 
+    <entry name="show_title" type="string">
+      <label>Show title besides lyrics</label>
+      <default>no</default>
+    </entry>
+
   </group>
 
 </kcfg>

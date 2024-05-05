@@ -3,3 +3,4 @@
 *.jsc
 *.mo
 /build
+/.VSCodeCounter

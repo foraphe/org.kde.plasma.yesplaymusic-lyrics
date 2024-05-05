@@ -86,7 +86,7 @@
                     }
                 }
                 for (var j = 0; j < timestamp_all.length; j++) {
-                    var ts_match = /^\[(\d{1,2}):(\d|[0-5]\d)(\.(\d+))?\]$/g.exec(timestamp_all[j]);
+                    var ts_match = /^\[(\d{1,2}):(\d|[0-5]\d)(.(\d+))?\]$/g.exec(timestamp_all[j]);
                     if (ts_match && (line != "")) {
                         this.lyrics_all.push({
                             timestamp: Number(ts_match[1]) * 60 + Number(ts_match[2]) + (ts_match[4] ? Number('0.' + ts_match[4]) : 0),
@@ -105,7 +105,7 @@
             if (this.isEmpty(this.meta_info)) {
                 this.meta_info = undefined;
             }
-            this.length = this.lyrics_all.length
+            this.length = this.lyrics_all ? this.lyrics_all.length : 0;
             return (this.lyrics_all !== undefined || this.meta_info !== undefined) ? true : false;
         },
         getLyrics: function () {

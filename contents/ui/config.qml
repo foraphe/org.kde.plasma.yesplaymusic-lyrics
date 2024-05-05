@@ -17,6 +17,8 @@ KCM.SimpleKCM {
     property alias cfg_first_language: first_language_text.text
     property alias cfg_second_language: second_language_text.text
 
+    property alias cfg_show_title: cfg_title.text
+
     QtLayouts.ColumnLayout {
         anchors.left: parent.left
 
@@ -184,6 +186,27 @@ KCM.SimpleKCM {
                     onClicked: second_language_text.text = "romaji"
                 }
             }
+        }
+
+        QtLayouts.RowLayout {
+            QtControls.Label {
+                visible: false
+                id: cfg_title
+            }
+
+            QtControls.Label {
+                text: i18n("show title and artist ")
+            }
+            QtControls.RadioButton {
+                    text: "yes"
+                    checked: cfg_title.text === "yes"
+                    onClicked: cfg_title.text="yes"
+                }
+                QtControls.RadioButton {
+                    text: "no"
+                    checked: cfg_title.text === "no"
+                    onClicked: cfg_title.text="no"
+                }
         }
 
     }
